@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Password Array
 var password = [];
 
-// Add event listener to generate button
+// Add event listener to generate button - Password prompts appear when button is clicked.
 generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
@@ -53,11 +53,10 @@ function writePassword() {
     .split("");
   var specials = "!@#$%^&*()_-+={}[]|;:<>,./?".split("");
 
-  //   If statements for user input
+  //   If statements for user input - worked with tutor on spread syntax.
   var availOptions = [];
   if (confirmNumber) {
     availOptions = [...availOptions, ...numArr];
-    console.log(availOptions);
   }
 
   if (confirmLower) {
@@ -71,7 +70,6 @@ function writePassword() {
   if (confirmSpecial) {
     availOptions = [...availOptions, ...specials];
   }
-  console.log(availOptions);
 
   // Random selection loop for variables.
   for (var i = 0; i < promptLength; i++) {
@@ -79,9 +77,9 @@ function writePassword() {
       availOptions[
         Math.floor(Math.random() * availOptions.length) - 1
       ];
-    //   push random index to password
+    //   Push random index to password
     password.push(randomIndex);
-    console.log(randomIndex);
+    // console.log(randomIndex);
   }
 
   // Joins password array to string to remove ','
