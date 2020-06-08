@@ -53,35 +53,17 @@ function writePassword() {
     );
     console.log("Special: " + confirmSpecial);
   }
-  //   console.log(promptLength);
-  //   var confirmLower = confirm(
-  //     "Would you like lowercase characters in your password? Click 'Ok' for Yes or 'Cancel' for No."
-  //   );
-  //   console.log(confirmLower);
-  //   var confirmUpper = confirm(
-  //     "Would you like uppercase characters in your password? Click 'Ok' for Yes or 'Cancel' for No."
-  //   );
-  //   console.log(confirmUpper);
-  //   var confirmNumber = confirm(
-  //     "Would you like numbers characters in your password? Click 'Ok' for Yes or 'Cancel' for No."
-  //   );
-  //   console.log(confirmNumber);
-  //   var confirmSpecial = confirm(
-  //     "Would you like special characters characters in your password? Click 'Ok' for Yes or 'Cancel' for No."
-  //   );
-  //   console.log(confirmSpecial);
 
-  // Else if for 4 negative options
+  // Four False Options. 
   if (
     !confirmLower &&
     !confirmUpper &&
     !confirmNumber &&
     !confirmSpecial
   ) {
-    choices = alert("You must choose a criteria!");
+    choices = alert("You must make at least one selection.");
   }
-  // First if statement that uses user input prompts to determine choices
-  // Else if for 4 positive options
+  //  Four True Options
   else if (
     confirmLower &&
     confirmUpper &&
@@ -95,7 +77,7 @@ function writePassword() {
     );
     console.log(choices);
   }
-  // Else if for 3 positive options
+  // Three True and One False 
   else if (confirmLower && confirmUpper && confirmNumber) {
     choices = getRandomSymbol().concat(
       getRandomLower,
@@ -119,8 +101,8 @@ function writePassword() {
       getRandomUpper()
     );
   }
-  //   // Else if for 2 positive options
-  else if (confirmSymbol && confirmNumber) {
+  // Two True Options
+  else if (confirmSpecial && confirmNumber) {
     choices = getRandomSymbol().concat(getRandomNumber());
   } else if (confirmSpecial && confirmLower) {
     choices = getRandomSymbol().concat(getRandomLower());
@@ -133,7 +115,7 @@ function writePassword() {
   } else if (confirmNumber && confirmUpper) {
     choices = getRandomNumber().concat(getRandomUpper());
   }
-  //   // Else if for 1 positive option
+  // One True Option
   else if (confirmSpecial) {
     choices = getRandomSymbol();
   } else if (confirmNumber) {
@@ -160,6 +142,7 @@ var password = [];
     var ps = password.join("");
     UserInput(ps);
     return ps;
+    console.log(ps)
 }
 
 function UserInput(ps) {
@@ -167,28 +150,7 @@ function UserInput(ps) {
 
 }
 
-//   const userInput = {
-//     length: promptLength,
-//     lower: confirmLower,
-//     upper: confirmUpper,
-//     number: confirmNumber,
-//     special: confirmSpecial,
-//   };
-// I have this but what to do with it now?
-// Need to connect characters to confirm()
-//   console.log(userInput);
-
-//   var password = [];
-
-//   for (var i = 0; i < promptLength; i++) {
-//     var pickChoices = userInput[Math.floor(Math.random() * promptLength.length)];
-//     password.push(pickChoices);
-//     console.log(userInput);
-//   }
-
-//   console.log(password);
-
-//   var password = generatePassword();
+// var password = generatePassword();
 
 var passwordText = document.querySelector("#password");
 
