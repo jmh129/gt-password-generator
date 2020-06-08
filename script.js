@@ -84,7 +84,6 @@ function writePassword() {
       getRandomNumber(),
       getRandomSymbol()
     );
-    // console.log(inputs);
   }
   // Three True and One False
   else if (confirmLower && confirmUpper && confirmNumber) {
