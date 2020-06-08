@@ -20,9 +20,9 @@ function getRandomUpper() {
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
-function getRandomSymbol() {
-  const symbols = "!@#$%^&*()_-+={}[]|;:<>,./?";
-  return symbols[Math.floor(Math.random() * symbols.length)];
+function getRandomSpecial() {
+  const specials = "!@#$%^&*()_-+={}[]|;:<>,./?";
+  return specials[Math.floor(Math.random() * specials.length)];
 }
 
 // Write password to the #password input
@@ -83,7 +83,7 @@ function writePassword() {
     inputs = getRandomLower().concat(
       getRandomUpper(),
       getRandomNumber(),
-      getRandomSymbol()
+      getRandomSpecial()
     );
   }
   // Three True and One False
@@ -98,7 +98,7 @@ function writePassword() {
       getRandomNumber()
     );
   } else if (confirmSpecial && confirmLower && confirmUpper) {
-    inputs = getRandomSymbol().concat(
+    inputs = getRandomSpecial().concat(
       getRandomLower(),
       getRandomUpper()
     );
@@ -110,11 +110,11 @@ function writePassword() {
   }
   // Two True Options
   else if (confirmSpecial && confirmNumber) {
-    inputs = getRandomSymbol().concat(getRandomNumber());
+    inputs = getRandomSpecial().concat(getRandomNumber());
   } else if (confirmSpecial && confirmLower) {
-    inputs = getRandomSymbol().concat(getRandomLower());
+    inputs = getRandomSpecial().concat(getRandomLower());
   } else if (confirmSpecial && confirmUpper) {
-    inputs = getRandomSymbol().concat(getRandomUpper());
+    inputs = getRandomSpecial().concat(getRandomUpper());
   } else if (confirmLower && confirmNumber) {
     inputs = getRandomLower().concat(getRandomNumber());
   } else if (confirmLower && confirmUpper) {
@@ -124,7 +124,7 @@ function writePassword() {
   }
   // One True Option
   else if (confirmSpecial) {
-    inputs = getRandomSymbol();
+    inputs = getRandomSpecial()();
   } else if (confirmNumber) {
     inputs = getRandomNumber();
   } else if (confirmLower) {
