@@ -28,13 +28,15 @@ function writePassword() {
   promptLength = parseInt(promptLength);
 
   while (isNaN(promptLength)) {
-    alert("Please enter a number."); return;
+    alert("Please enter a number.");
+    return;
   }
   if (promptLength < 8 || promptLength > 128) {
-    alert("Please Enter a Number Between 8 and 128."); return;
-  }
-  else if (!enter) {
-      alert("Please Enter a Number Between 8 and 128."); return;
+    alert("Please Enter a Number Between 8 and 128.");
+    return;
+  } else if (!enter) {
+    alert("Please Enter a Number Between 8 and 128.");
+    return;
   }
   console.log(promptLength);
   var confirmLower = confirm(
@@ -61,7 +63,7 @@ function writePassword() {
     number: confirmNumber,
     special: confirmSpecial,
   };
-
+// I have this but what to do with it now?
   console.log(userInput);
 
   var password = generatePassword();
