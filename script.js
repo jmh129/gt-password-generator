@@ -70,23 +70,21 @@ function writePassword() {
     confirmNumber &&
     confirmSpecial
   ) {
-    inputs = getRandomSymbol().concat(
-      getRandomNumber(),
+    inputs = getRandomLower().concat(
       getRandomUpper(),
-      getRandomLower()
+      getRandomNumber(),
+      getRandomSymbol()
     );
     // console.log(inputs);
   }
   // Three True and One False
   else if (confirmLower && confirmUpper && confirmNumber) {
-    inputs = getRandomSymbol().concat(
-      getRandomLower,
+    inputs = getRandomLower().concat(
       getRandomUpper(),
       getRandomNumber()
     );
   } else if (confirmLower && confirmUpper && confirmNumber) {
-    inputs = getRandomSymbol().concat(
-      getRandomLower(),
+    inputs = getRandomLower().concat(
       getRandomUpper(),
       getRandomNumber()
     );
@@ -129,7 +127,11 @@ function writePassword() {
   // Empty Password Variable
   var password = [];
 
-  // Random selection for vars
+  function UserInput(pwd) {
+    document.getElementById("password").textContent = pwd;
+  }
+
+  // Random selection for variables.
   for (var i = 0; i < promptLength; i++) {
     var userInputs =
       inputs[Math.floor(Math.random() * inputs.length)];
@@ -139,19 +141,15 @@ function writePassword() {
   // Joins password array
   var pwd = password.join("");
   UserInput(pwd);
-  // return ps;
   console.log("Password: " + pwd);
 }
 
-function UserInput(pwd) {
-  document.getElementById("password").textContent = pwd;
-}
+// This came with the assignment. 
+// var password = generatePassword()
 
-// var password = generatePassword();
+// var passwordText = document.querySelector("#password");
 
-var passwordText = document.querySelector("#password");
-
-passwordText.value = password;
+// passwordText.value = password;
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
