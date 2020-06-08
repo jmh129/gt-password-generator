@@ -1,7 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Get Random ASCII characters. Note: 26 = 26 letter / 10 = 1-10
+// Password Array
+var password = [];
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+// Get Random ASCII characters.
+// https://www.w3schools.com/charsets/ref_html_ascii.asp - Link to Table
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -54,6 +62,7 @@ function writePassword() {
     console.log("Special: " + confirmSpecial);
   }
 
+//   Selection Options 
   // Four False Options.
   if (
     !confirmLower &&
@@ -124,13 +133,6 @@ function writePassword() {
     inputs = getRandomUpper();
   }
 
-  // Empty Password Variable
-  var password = [];
-
-  function UserInput(pwd) {
-    document.getElementById("password").textContent = pwd;
-  }
-
   // Random selection for variables.
   for (var i = 0; i < promptLength; i++) {
     var userInputs =
@@ -138,11 +140,16 @@ function writePassword() {
     password.push(userInputs);
     // console.log(userInputs);
   }
+
   // Joins password array
   var pwd = password.join("");
   UserInput(pwd);
   console.log("Password: " + pwd);
 }
+
+function UserInput(pwd) {
+    document.getElementById("password").textContent = pwd;
+  }
 
 // This came with the assignment.
 // var password = generatePassword()
@@ -151,5 +158,5 @@ function writePassword() {
 
 // passwordText.value = password;
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
