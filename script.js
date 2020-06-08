@@ -10,6 +10,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Get Random ASCII characters.
 // https://www.w3schools.com/charsets/ref_html_ascii.asp - Link to Table
+// Lowercase #'s start at 97 - Uppercase - 65 - Numbers - 0. 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
