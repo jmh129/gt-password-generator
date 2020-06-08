@@ -54,7 +54,7 @@ function writePassword() {
     console.log("Special: " + confirmSpecial);
   }
 
-  // Four False Options. 
+  // Four False Options.
   if (
     !confirmLower &&
     !confirmUpper &&
@@ -70,84 +70,81 @@ function writePassword() {
     confirmNumber &&
     confirmSpecial
   ) {
-    choices = getRandomSymbol().concat(
+    inputs = getRandomSymbol().concat(
       getRandomNumber(),
       getRandomUpper(),
       getRandomLower()
     );
-    console.log(choices);
+    // console.log(inputs);
   }
-  // Three True and One False 
+  // Three True and One False
   else if (confirmLower && confirmUpper && confirmNumber) {
-    choices = getRandomSymbol().concat(
+    inputs = getRandomSymbol().concat(
       getRandomLower,
       getRandomUpper(),
       getRandomNumber()
     );
   } else if (confirmLower && confirmUpper && confirmNumber) {
-    choices = getRandomSymbol().concat(
+    inputs = getRandomSymbol().concat(
       getRandomLower(),
       getRandomUpper(),
       getRandomNumber()
     );
   } else if (confirmSpecial && confirmLower && confirmUpper) {
-    choices = getRandomSymbol().concat(
+    inputs = getRandomSymbol().concat(
       getRandomLower(),
       getRandomUpper()
     );
   } else if (confirmNumber && confirmLower && confirmUpper) {
-    choices = getRandomNumber().concat(
+    inputs = getRandomNumber().concat(
       getRandomLower(),
       getRandomUpper()
     );
   }
   // Two True Options
   else if (confirmSpecial && confirmNumber) {
-    choices = getRandomSymbol().concat(getRandomNumber());
+    inputs = getRandomSymbol().concat(getRandomNumber());
   } else if (confirmSpecial && confirmLower) {
-    choices = getRandomSymbol().concat(getRandomLower());
+    inputs = getRandomSymbol().concat(getRandomLower());
   } else if (confirmSpecial && confirmUpper) {
-    choices = getRandomSymbol().concat(getRandomUpper());
+    inputs = getRandomSymbol().concat(getRandomUpper());
   } else if (confirmLower && confirmNumber) {
-    choices = getRandomLower().concat(getRandomNumber());
+    inputs = getRandomLower().concat(getRandomNumber());
   } else if (confirmLower && confirmUpper) {
-    choices = getRandomLower().concat(getRandomUpper());
+    inputs = getRandomLower().concat(getRandomUpper());
   } else if (confirmNumber && confirmUpper) {
-    choices = getRandomNumber().concat(getRandomUpper());
+    inputs = getRandomNumber().concat(getRandomUpper());
   }
   // One True Option
   else if (confirmSpecial) {
-    choices = getRandomSymbol();
+    inputs = getRandomSymbol();
   } else if (confirmNumber) {
-    choices = getRandomNumber();
+    inputs = getRandomNumber();
   } else if (confirmLower) {
-    choices = getRandomLower();
+    inputs = getRandomLower();
+  } else if (confirmUpper) {
+    inputs = getRandomUpper();
   }
-    else if (confirmUpper) {
-      choices = getRandomUpper();
-}
 
-// password variable is an array placeholder for user generated amount of length
-var password = [];
+  // Empty Password Variable
+  var password = [];
 
-// Start random selection variables:
-// Random selection for all variables:
+  // Random selection for vars
   for (var i = 0; i < promptLength; i++) {
-    var pickChoices =
-      choices[Math.floor(Math.random() * choices.length)];
-    password.push(pickChoices);
-    console.log(pickChoices)
+    var userInputs =
+      inputs[Math.floor(Math.random() * inputs.length)];
+    password.push(userInputs);
+    // console.log(userInputs);
   }
-  // This joins the password array and converts it to a string
-    var ps = password.join("");
-    UserInput(ps);
-    return ps;
-    console.log(ps)
+  // Joins password array
+  var pwd = password.join("");
+  UserInput(pwd);
+  // return ps;
+  console.log("Password: " + pwd);
 }
 
-function UserInput(ps) {
-    document.getElementById("password").textContent = ps;
-
+function UserInput(pwd) {
+  document.getElementById("password").textContent = pwd;
 }
 
 // var password = generatePassword();
