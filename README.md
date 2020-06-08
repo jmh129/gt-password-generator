@@ -14,10 +14,9 @@ Clone this repo to your local machine using https://github.com/jmh129/gt-passwor
 ### Usage
 The password can be used by going to the url and clicking on the "Gernerate Password" button. The user will then be asked a series of prompts from, how many characters the user wish the password to be, include lowercase, uppercase, numbers and symbols. 
 
-Link to website: 
- <!-- Need to add in photos of website and links -->
+Link to website: https://jmh129.github.io/gt-password-generator/ 
 
-![Alt Text](https://github.com/jmh129/gt-accessibility-html/blob/develop/assets/images/gt-accessibiliy-html.png?raw=true)
+![Alt Text](https://github.com/jmh129/gt-password-generator/blob/master/assets/images/password-generator.png?raw=true)
 
 ### Credits
 Credit to the Georgia Institute of Technology Coding Bootcamp for the original source code and instruction for the assignemnt. 
