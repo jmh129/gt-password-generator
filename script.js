@@ -1,6 +1,23 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var password = [];
+
+// Get Random ASCII characters.
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function getRandomSymbol() {
+  const symbols = "!@#$%^&*()_-+={}[]|;:<>,./?";
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
 // Write password to the #password input
 function writePassword() {
   // User Input Prompts
@@ -11,11 +28,13 @@ function writePassword() {
   promptLength = parseInt(promptLength);
 
   while (isNaN(promptLength)) {
-    alert("Please enter a number.");
-    break;
+    alert("Please enter a number."); return;
   }
-  if (promptLength < 7 || promptLength > 127) {
-    alert("Please Enter a Number Between 8 and 128.");
+  if (promptLength < 8 || promptLength > 128) {
+    alert("Please Enter a Number Between 8 and 128."); return;
+  }
+  else if (!enter) {
+      alert("Please Enter a Number Between 8 and 128."); return;
   }
   console.log(promptLength);
   var confirmLower = confirm(
