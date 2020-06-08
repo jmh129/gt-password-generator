@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Get Random ASCII characters.
+// Get Random ASCII characters. Note: 26 = 26 letter / 10 = 1-10
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -144,7 +144,7 @@ function writePassword() {
   console.log("Password: " + pwd);
 }
 
-// This came with the assignment. 
+// This came with the assignment.
 // var password = generatePassword()
 
 // var passwordText = document.querySelector("#password");
