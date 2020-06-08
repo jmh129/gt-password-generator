@@ -77,7 +77,7 @@ function writePassword() {
       availOptions[
         Math.floor(Math.random() * availOptions.length) - 1
       ];
-    //   Push random index to password
+    //   Push random index to pwd
     password.push(randomIndex);
     // console.log(randomIndex);
   }
