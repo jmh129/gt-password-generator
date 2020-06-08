@@ -12,7 +12,7 @@ The code for this website was given by the Instructors at the Georgia Tech Codin
 ### Installation
 Clone this repo to your local machine using https://github.com/jmh129/gt-password-generator
 ### Usage
-The password can be used by going to the url and clicking on the "Gernerate Password" button. The user will then be asked a series of prompts from, how many characters the user wish the password to be, include lowercase, uppercase, numbers and symbols. 
+The password can be used by going to the url and clicking on the "Generate Password" button. The user will then be asked a series of prompts from, how many characters the user wish the password to be, include lowercase, uppercase, numbers and symbols. 
 
 Link to website: https://jmh129.github.io/gt-password-generator/ 
 
