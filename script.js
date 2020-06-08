@@ -83,7 +83,7 @@ function writePassword() {
   // Joins password array to string to remove ','
   var pwd = password.join("");
   generatePassword(pwd);
-//   console.log("Password: " + pwd);
+  //   console.log("Password: " + pwd);
 }
 
 // Display Content in #password
