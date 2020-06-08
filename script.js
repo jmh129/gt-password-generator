@@ -7,23 +7,26 @@ var password = [];
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
 // Get Random ASCII characters.
 // https://www.w3schools.com/charsets/ref_html_ascii.asp - Link to Table
-// Lowercase #'s start at 97 - Uppercase - 65 - Numbers - 0. 
-function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-function getRandomSpecial() {
-  const specials = "!@#$%^&*()_-+={}[]|;:<>,./?";
-  return specials[Math.floor(Math.random() * specials.length)];
-}
+// Lowercase #'s start at 97 - Uppercase - 65 - Numbers - 48.
+// function randomLower() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
+// function randomUpper() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+// }
+// function randomNumber() {
+//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+// }
+// function randomSpecial() {
+//   const specials = "!@#$%^&*()_-+={}[]|;:<>,./?";
+//   return specials[Math.floor(Math.random() * specials.length)];
+// }
+
+
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -63,82 +66,97 @@ function writePassword() {
     console.log("Special: " + confirmSpecial);
   }
 
-//   Selection Options 
+  var numArr = [0,1,2,3,4,5,6,7,8,9]
+  var alphabetLower = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  var alphabetUpper ='abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+  var specials = '!@#$%^&*()_-+={}[]|;:<>,./?'.split('');
+  
+//   Predefined Array - and Special Characters. 
+  
+  var availOptions = []
+  if(confirmNumber){
+      availOptions = [...availOptions,...numArr]
+      console.log(availOptions)
+  }
+  
+  if(confirmLower){
+      availOptions = [...availOptions,...alphabetLower]
+  }
+  
+  if(confirmUpper){
+      availOptions = [...availOptions, ...alphabetUpper]
+  }
+
+  if(confirmSpecial){
+    availOptions = [...availOptions, ...specials]
+}
+console.log(availOptions);
+
+  //   Selection Options
   // Four False Options.
-  if (
-    !confirmLower &&
-    !confirmUpper &&
-    !confirmNumber &&
-    !confirmSpecial
-  ) {
-    choices = alert("You must make at least one selection.");
-  }
-  //  Four True Options
-  else if (
-    confirmLower &&
-    confirmUpper &&
-    confirmNumber &&
-    confirmSpecial
-  ) {
-    inputs = getRandomLower().concat(
-      getRandomUpper(),
-      getRandomNumber(),
-      getRandomSpecial()
-    );
-  }
-  // Three True and One False
-  else if (confirmLower && confirmUpper && confirmNumber) {
-    inputs = getRandomLower().concat(
-      getRandomUpper(),
-      getRandomNumber()
-    );
-  } else if (confirmLower && confirmUpper && confirmNumber) {
-    inputs = getRandomLower().concat(
-      getRandomUpper(),
-      getRandomNumber()
-    );
-  } else if (confirmSpecial && confirmLower && confirmUpper) {
-    inputs = getRandomSpecial().concat(
-      getRandomLower(),
-      getRandomUpper()
-    );
-  } else if (confirmNumber && confirmLower && confirmUpper) {
-    inputs = getRandomNumber().concat(
-      getRandomLower(),
-      getRandomUpper()
-    );
-  }
-  // Two True Options
-  else if (confirmSpecial && confirmNumber) {
-    inputs = getRandomSpecial().concat(getRandomNumber());
-  } else if (confirmSpecial && confirmLower) {
-    inputs = getRandomSpecial().concat(getRandomLower());
-  } else if (confirmSpecial && confirmUpper) {
-    inputs = getRandomSpecial().concat(getRandomUpper());
-  } else if (confirmLower && confirmNumber) {
-    inputs = getRandomLower().concat(getRandomNumber());
-  } else if (confirmLower && confirmUpper) {
-    inputs = getRandomLower().concat(getRandomUpper());
-  } else if (confirmNumber && confirmUpper) {
-    inputs = getRandomNumber().concat(getRandomUpper());
-  }
-  // One True Option
-  else if (confirmSpecial) {
-    inputs = getRandomSpecial()();
-  } else if (confirmNumber) {
-    inputs = getRandomNumber();
-  } else if (confirmLower) {
-    inputs = getRandomLower();
-  } else if (confirmUpper) {
-    inputs = getRandomUpper();
-  }
+//   if (
+//     !confirmLower &&
+//     !confirmUpper &&
+//     !confirmNumber &&
+//     !confirmSpecial
+//   ) {
+//     choices = alert("You must make at least one selection.");
+//   }
+//   //  Four True Options
+//   else if (
+//     confirmLower &&
+//     confirmUpper &&
+//     confirmNumber &&
+//     confirmSpecial
+//   ) {
+//     inputs = randomLower().concat(
+//       randomUpper(),
+//       randomNumber(),
+//       randomSpecial()
+//     );
+//   }
+//   // Three True and One False
+//   else if (confirmLower && confirmUpper && confirmNumber) {
+//     inputs = randomLower().concat(randomUpper(), randomNumber());
+//   } else if (confirmLower && confirmUpper && confirmNumber) {
+//     inputs = randomLower().concat(randomUpper(), randomNumber());
+//   } else if (confirmSpecial && confirmLower && confirmUpper) {
+//     inputs = randomSpecial().concat(randomLower(), randomUpper());
+//   } else if (confirmNumber && confirmLower && confirmUpper) {
+//     inputs = randomNumber().concat(randomLower(), randomUpper());
+//   }
+//   // Two True Options
+//   else if (confirmSpecial && confirmNumber) {
+//     inputs = randomSpecial().concat(randomNumber());
+//   } else if (confirmSpecial && confirmLower) {
+//     inputs = randomSpecial().concat(randomLower());
+//   } else if (confirmSpecial && confirmUpper) {
+//     inputs = randomSpecial().concat(randomUpper());
+//   } else if (confirmLower && confirmNumber) {
+//     inputs = randomLower().concat(randomNumber());
+//   } else if (confirmLower && confirmUpper) {
+//     inputs = randomLower().concat(randomUpper());
+//   } else if (confirmNumber && confirmUpper) {
+//     inputs = randomNumber().concat(randomUpper());
+//   }
+//   // One True Option
+//   else if (confirmSpecial) {
+//     inputs = randomSpecial();
+//   } else if (confirmNumber) {
+//     inputs = randomNumber();
+//   } else if (confirmLower) {
+//     inputs = randomLower();
+//   } else if (confirmUpper) {
+//     inputs = randomUpper();
+//   }
 
   // Random selection for variables.
   for (var i = 0; i < promptLength; i++) {
-    var userInputs =
-      inputs[Math.floor(Math.random() * inputs.length)];
-    password.push(userInputs);
-    // console.log(userInputs);
+      var randomIndex = availOptions[Math.floor(Math.random() * availOptions.length) - 1];
+    // var userInputs =
+    //   inputs[Math.floor(Math.random() * inputs.length)];
+    password.push(randomIndex);
+    console.log(randomIndex);
   }
 
   // Joins password array
@@ -147,9 +165,10 @@ function writePassword() {
   console.log("Password: " + pwd);
 }
 
+// Display Content in #password
 function UserInput(pwd) {
-    document.getElementById("password").textContent = pwd;
-  }
+  document.getElementById("password").value = pwd;
+}
 
 // This came with the assignment.
 // var password = generatePassword()
