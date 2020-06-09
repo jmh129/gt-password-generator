@@ -69,6 +69,10 @@ function writePassword() {
     availOptions = [...availOptions, ...specials];
   }
 
+  else {
+      alert("You must make at least one selection.")
+  }
+
   // Random selection loop for variables.
   for (var i = 0; i < promptLength; i++) {
     var randomIndex =
