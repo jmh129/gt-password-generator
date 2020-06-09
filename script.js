@@ -68,7 +68,7 @@ function writePassword() {
   if (confirmSpecial) {
     availOptions = [...availOptions, ...specials];
   }
-
+// User must make at least one selection.
   else {
       alert("You must make at least one selection.")
   }
