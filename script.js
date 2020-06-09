@@ -68,9 +68,15 @@ function writePassword() {
   if (confirmSpecial) {
     availOptions = [...availOptions, ...specials];
   }
-// User must make at least one selection.
-  else {
-      alert("You must make at least one selection.")
+  // User must make at least one
+  else if (
+    !confirmNumber &&
+    !confirmLower &&
+    !confirmUpper &&
+    !confirmSpecial
+  ) {
+    alert("You must make at least one selection.");
+    return;
   }
 
   // Random selection loop for variables.
