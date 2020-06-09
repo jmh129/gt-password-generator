@@ -8,7 +8,7 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   // User Input Prompts
   var promptLength = prompt(
-    "Please enter you desired password length. Your password must be a minimum of '8' and a maximmum of '128' characters long."
+    "Please enter your desired password length. Your password must be a minimum of '8' and a maximmum of '128' characters long."
   );
   // Converting user input to Integer.
   promptLength = parseInt(promptLength);
